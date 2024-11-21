@@ -1,4 +1,4 @@
-// 믹스업
+
 @mixin flex(
   $direction: row,
   $justify: start,
@@ -19,26 +19,25 @@
   font-weight: $weight;
 }
 
-// 변수
 $tag-color: #d7fa00;
 $gray: rgb(160, 160, 160);
 
+section {
+  @include flex($wrap: wrap, $gap: 20px);
+  padding: 20px 40px;
+}
+
 .header-container {
   @include flex($justify: space-between, $align: center);
-  padding: 20px 20px;
+  padding: 10px 20px;
   background-color: black;
   ul {
     @include flex($justify: center, $align: center, $gap: 20px);
     li {
-      @include font($size: 16px, $weight: 400);
+      @include font($size: 13px, $weight: 400);
       list-style: none;
     }
   }
-}
-
-section {
-  @include flex($justify: center, $align: center, $wrap: wrap, $gap: 20px);
-  padding: 20px 40px;
 }
 
 .content-container {
@@ -47,7 +46,6 @@ section {
     width: 300px;
     border-radius: 10px;
     margin-bottom: 3px;
-    min-height: 225px;
   }
   span {
     @include font($size: 12px);
